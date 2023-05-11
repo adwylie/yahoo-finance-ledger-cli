@@ -6,6 +6,7 @@ import yaml
 import requests
 from bs4 import BeautifulSoup
 
+
 def load_configuration(file='.config'):
     """
     Load configuration from YAML file.
