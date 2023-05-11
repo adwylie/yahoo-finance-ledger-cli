@@ -8,21 +8,21 @@ Grab historical stock prices from Yahoo Finance and output in Ledger CLI format.
 Create a Python 3 virtual environment, activate it,
 and install the packages from `requirements.txt`.
 
-Modify the provided `.config` file to include any stock symbols
-you'd like to get price information for.
+Create a text file named `.config` at the repository root,
+and include any stock symbols you'd like to get price information for.
 Institution and account names will be included in the output
 to group the returned information (as shown below).
 
-Execute the script, eg. `python main.py 2023-05-10 -v`.
+To execute the script run `python main.py 2023-05-10 -v`.
 The verbose flag is optional, though useful
-if there are many symbols to process (to view progress).
-The output is saved by default in `output.txt` file.
+if there are many symbols to process (to interactively view progress).
+The output is saved in an `output.txt` file by default.
 
 Example `.config` file:
 
 ```
 Institution:
-    AccountName:
+  AccountName:
     - AAPL
     - MSFT
     - AMZN
