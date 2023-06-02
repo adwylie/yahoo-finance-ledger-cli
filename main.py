@@ -48,7 +48,7 @@ def get_stock_price(symbol, date_str):
     response = requests.get(url, headers={'User-Agent': firefox_user_agent})
 
     soup = BeautifulSoup(response.content, 'html.parser')
-    date_text = datetime.datetime.strptime(date_str, '%Y-%m-%d').strftime('%B %d, %Y')
+    date_text = datetime.datetime.strptime(date_str, '%Y-%m-%d').strftime('%b %d, %Y')
 
     date_span = soup.find('span', string=date_text)
 
