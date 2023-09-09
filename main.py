@@ -22,7 +22,7 @@ def load_configuration(file='.config'):
         - FB
 
     There can be any number of institutions and accounts specified.
-    
+
     """
     # Disclaimer: The stocks listed above are examples only,
     # and are not to be taken as a recommendation or endorsement.
