@@ -47,9 +47,16 @@ def get_stock_price(symbol, date_str):
     firefox_user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13.5; rv:109.0) Gecko/20100101 Firefox/117.0'
 
     response = requests.get(url, headers={'User-Agent': firefox_user_agent})
+    soup = BeautifulSoup(response.text, 'html.parser')
 
-    soup = BeautifulSoup(response.content, 'html.parser')
-    date_text = datetime.datetime.strptime(date_str, '%Y-%m-%d').strftime('%b %d, %Y')
+    date_obj = datetime.datetime.strptime(date_str, '%Y-%m-%d')
+    date_text = date_obj.strftime('%b %d, %Y')
+
+    # For some reason the page first returns the month as 'Sept', which is then
+    # shortened with JavaScript to the correct abbreviation of 'Sep'. No JS
+    # runs for us so we need to search for the original value.
+    if 9 == date_obj.month:
+        date_text = date_text.replace('Sep', 'Sept')
 
     date_span = soup.find('span', string=date_text)
 
