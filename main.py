@@ -44,7 +44,8 @@ def format_stock_price(date_str, symbol, currency, price):
 def get_stock_price(symbol, date_str):
     """Return currency and price as a tuple."""
     url = f'https://ca.finance.yahoo.com/quote/{symbol}/history'
-    firefox_user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:101.0) Gecko/20100101 Firefox/101.0'
+    firefox_user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13.5; rv:109.0) Gecko/20100101 Firefox/117.0'
+
     response = requests.get(url, headers={'User-Agent': firefox_user_agent})
 
     soup = BeautifulSoup(response.content, 'html.parser')
