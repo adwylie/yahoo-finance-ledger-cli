@@ -5,6 +5,9 @@ Grab historical stock prices from Yahoo Finance and output in Ledger CLI format.
 
 ### How to use
 
+Install the Firefox Selenium web driver
+([instructions here](https://selenium-python.readthedocs.io/installation.html#drivers)).
+
 Create a Python 3 virtual environment, activate it,
 and install the packages from `requirements.txt`.
 
