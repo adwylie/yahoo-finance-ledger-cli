@@ -64,7 +64,7 @@ def get_stock_price(webdriver, symbol, date_str):
     # to find the price at market close.
     # For some reason we have to traverse 2 siblings per table cell.
     price_at_close_cell = date_td
-    for _ in range(8):
+    for _ in range(4):
         price_at_close_cell = price_at_close_cell.nextSibling
 
     price = price_at_close_cell.contents[0].string
